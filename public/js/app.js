@@ -2,8 +2,8 @@ var App = (function() {
 
     var App = function(params) {
         params = params || {};
-        this.container = params.container;
-        this.container2 = params.container2;
+        // this.container = params.container;
+        // this.container2 = params.container2;
         // this.renderer = null;
         // this.scene = null;
         // this.camera = null;
@@ -23,6 +23,7 @@ var App = (function() {
     };
 
     App.prototype.init = function() {
+        /* Init renderer */
         // this.renderer = new THREE.WebGLRenderer({ antialias: true });
         // this.renderer.shadowMap.enabled = true;
         // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -35,10 +36,10 @@ var App = (function() {
         //     this.container2.appendChild(this.renderer2.domElement);
         // }
 
-        // Create a new Three.js scene
+        /* Create a new Three.js scene */
         // this.scene = new THREE.Scene();
 
-        // Put in a camera
+        /* Put in a camera */
         // this.camera = new Camera({
         //     positionX: -0.1,
         //     positionY: 0,
@@ -59,9 +60,10 @@ var App = (function() {
         //     this.scene.add(this.camera2.object3D);
         // }
 
+        /* Initialise object container */
         // this.object3DContainer = new THREE.Object3D();
 
-        // Add star field in the scene
+        /* Add star field in the scene */
         // var starGeometry = new THREE.SphereGeometry(80, 32, 32);
         // var starMaterial = new THREE.MeshPhongMaterial({
         //     map: new THREE.ImageUtils.loadTexture("./images/star.jpg"),
@@ -70,25 +72,27 @@ var App = (function() {
         // starField = new THREE.Mesh(starGeometry, starMaterial);
         // this.scene.add(starField);
 
+        /* Add orbit controls */
         // this.orbit = new THREE.OrbitControls(this.camera.object3D, this.renderer.domElement);
 
-        // Add some light to see the scene    
+        /* Add some light to see the scene */
         // this.scene.add(new THREE.AmbientLight(0xFFFFFF));
 
-        // Init raycaster
+        /* Init raycaster */
         // this.raycaster = new THREE.Raycaster();
         // for (var i in this.objects) {
         //     this.object3Ds.add(this.objects[i].object3D);
         // }
 
-        // Add axis helper
+        /* Add axis helper */
         // this.scene.add(new THREE.AxisHelper(1000));
     };
 
     App.prototype.run = function() {
-        // Add objects in the scene
+        /* Add objects in the scene */
         // this.scene.add(this.object3DContainer);
 
+        /* Render the scene */
         // var render = function() {
         //     // Render the scene
         //     this.renderer.render(this.scene, this.camera.object3D);

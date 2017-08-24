@@ -10,11 +10,11 @@ function onLoad() {
 
     // Create new app
     app = new App({
-        container: container //,
+        // container: container,
         // container2: container2
     });
 
-    // Add objects in app
+    /* Init objects in app */
     // var sun = new Star({
     //     name: "Sun",
     //     positionX: 0,
@@ -58,7 +58,8 @@ function onLoad() {
     //     imagePath: "./images/jupiter.jpg",
     //     centerObject: sun.mesh
     // });
-
+    
+    /* Add objects in app */
     // app.addObject(sun);
     // app.addObject(earth);
     // app.addObject(moon);
