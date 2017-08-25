@@ -101,8 +101,11 @@ var App = (function() {
                 this.camera.update(this.time);
             }
 
-            this.orbit.update();
-            this.gyroController.update();
+            if (this.enableVR) {
+                this.gyroController.update();
+            } else {
+                this.orbit.update();
+            }
 
             // Ask for another frame
             requestAnimationFrame(render.bind(this));
@@ -113,7 +116,7 @@ var App = (function() {
 
     App.prototype.toogleAnimation = function() {
         this.animating = !this.animating;
-        if(this.animating) {
+        if (this.animating) {
             document.getElementsByTagName("html")[0].webkitRequestFullscreen();
         } else {
             document.webkitExitFullscreen();
@@ -133,9 +136,9 @@ var App = (function() {
     };
 
     App.prototype.resize = function() {
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
         if (this.vrRenderer) {
-            this.vrRenderer.setSize( window.innerWidth, window.innerHeight );
+            this.vrRenderer.setSize(window.innerWidth, window.innerHeight);
         }
     };
 
