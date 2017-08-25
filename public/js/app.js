@@ -130,7 +130,6 @@ var App = (function() {
         // this.raycaster.setFromCamera(mouse, this.camera.object3D);
         // var intersect = this.raycaster.intersectObjects(this.object3DContainer.children, true);
         // if (intersect.length > 0) {
-        //     console.log(intersect[0].object);
         //     return intersect[0].object.name;
         // }
         // return;
