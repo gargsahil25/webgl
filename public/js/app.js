@@ -121,6 +121,11 @@ var App = (function() {
 
     App.prototype.toogleAnimation = function() {
         // this.animating = !this.animating;
+        // if (this.animating) {
+        //     document.getElementsByTagName("html")[0].webkitRequestFullscreen();
+        // } else {
+        //     document.webkitExitFullscreen();
+        // }
     };
 
     App.prototype.getObjectName = function(clientX, clientY) {
@@ -133,7 +138,14 @@ var App = (function() {
         //     return intersect[0].object.name;
         // }
         // return;
-    }
+    };
+
+    // App.prototype.resize = function() {
+    //     this.renderer.setSize(window.innerWidth / 2, window.innerHeight);
+    //     if (this.renderer2) {
+    //         this.renderer2.setSize(window.innerWidth / 2, window.innerHeight);
+    //     }
+    // };
 
     return App;
 })();

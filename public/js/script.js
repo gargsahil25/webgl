@@ -75,6 +75,7 @@ function onLoad() {
 function addMouseHandler() {
     // container.addEventListener('mouseup', onMouseUp, false);
     // container.addEventListener('mousemove', onMouseMove, false);
+    // window.addEventListener('resize', app.resize.bind(app));
 }
 
 function onMouseUp(event) {
