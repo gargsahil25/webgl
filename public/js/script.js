@@ -9,7 +9,7 @@ function onLoad() {
     // Create new app
     app = new App({
         container: container,
-        enableVR: true
+        enableVR: false
     });
 
     /* Init objects in app */
@@ -23,7 +23,7 @@ function onLoad() {
         name: "Earth",
         positionX: 0,
         positionZ: 5,
-        rotationY: 0.05,
+        rotationY: 0.01,
         size: 0.5,
         tilt: 0.41,
         speed: 0.01,

@@ -86,6 +86,7 @@ var App = (function() {
 
         /* Render the scene */
         var render = function() {
+            starField.rotation.y -= 0.0005;
             // Render the scene
             if (this.enableVR) {
                 this.vrRenderer.render(this.scene, this.camera.object3D);
