@@ -80,6 +80,8 @@ var App = (function() {
     };
 
     App.prototype.run = function() {
+        // starField.rotation.y -= 0.0005;
+
         /* Add objects in the scene */
         // this.scene.add(this.object3DContainer);
 
