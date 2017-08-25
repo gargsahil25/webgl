@@ -3,9 +3,8 @@ var App = (function() {
     var App = function(params) {
         params = params || {};
         this.container = params.container;
-        this.container2 = params.container2;
+        this.enableVR = params.enableVR;
         this.renderer = null;
-        this.renderer2 = null;
         this.scene = null;
         this.camera = null;
         this.objects = [];
@@ -31,10 +30,9 @@ var App = (function() {
         this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
         this.container.appendChild(this.renderer.domElement);
 
-        if (this.container2) {
-            this.renderer2 = new THREE.WebGLRenderer({ antialias: true });
-            this.renderer2.setSize(this.container2.offsetWidth, this.container2.offsetHeight);
-            this.container2.appendChild(this.renderer2.domElement);
+        if (this.enableVR) {
+            this.vrRenderer = new THREE.StereoEffect(this.renderer);
+            this.vrRenderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
         }
 
         /* Create a new Three.js scene */
@@ -49,17 +47,6 @@ var App = (function() {
             height: this.container.offsetHeight
         });
         this.scene.add(this.camera.object3D);
-
-        if (this.container2) {
-            this.camera2 = new Camera({
-                positionX: 0.1,
-                positionY: 0,
-                positionZ: 10,
-                width: this.container.offsetWidth,
-                height: this.container.offsetHeight
-            });
-            this.scene.add(this.camera2.object3D);
-        }
 
         /* Initialise object container */
         this.object3DContainer = new THREE.Object3D();
@@ -98,10 +85,10 @@ var App = (function() {
         /* Render the scene */
         var render = function() {
             // Render the scene
-            this.renderer.render(this.scene, this.camera.object3D);
-
-            if (this.container2) {
-                this.renderer2.render(this.scene, this.camera2.object3D);
+            if (this.enableVR) {
+                this.vrRenderer.render(this.scene, this.camera.object3D);
+            } else {
+                this.renderer.render(this.scene, this.camera.object3D);
             }
 
             if (this.animating) {
@@ -143,8 +130,10 @@ var App = (function() {
     };
 
     App.prototype.resize = function() {
-        this.renderer.setSize( window.innerWidth / 2, window.innerHeight );
-        this.renderer2.setSize( window.innerWidth / 2, window.innerHeight );
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        if (this.vrRenderer) {
+            this.vrRenderer.setSize( window.innerWidth, window.innerHeight );
+        }
     };
 
     return App;
