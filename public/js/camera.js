@@ -7,6 +7,7 @@ var Camera = (function() {
         // this.positionZ = params.positionZ || 0;
         // this.width = params.width || 1;
         // this.height = params.height || 1;
+        // this.speed = 0.01;
 
         // this.object3D = null;
         this.init();
@@ -17,7 +18,13 @@ var Camera = (function() {
         // this.object3D.position.set(this.positionX, this.positionY, this.positionZ);
     };
 
-    Camera.prototype.update = function(time) {};
+    Camera.prototype.update = function(time) {
+        // if (time < 500) {
+        //     this.object3D.position.z += this.speed * time;
+        // } else if (time < 1000) {
+        //     this.object3D.position.z -= this.speed * time;
+        // }
+    };
 
     return Camera;
 
