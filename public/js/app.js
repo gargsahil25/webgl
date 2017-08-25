@@ -88,7 +88,7 @@ var App = (function() {
         }
 
         /* Add axis helper */
-        this.scene.add(new THREE.AxisHelper(1000));
+        // this.scene.add(new THREE.AxisHelper(1000));
     };
 
     App.prototype.run = function() {
