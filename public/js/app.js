@@ -13,6 +13,7 @@ var App = (function() {
         // this.animating = false;
         // this.time = 0;
         // this.orbit = null;
+        // this.gyroController = null;
         // this.raycaster = null;
 
         this.init();
@@ -63,6 +64,7 @@ var App = (function() {
 
         /* Add orbit controls */
         // this.orbit = new THREE.OrbitControls(this.camera.object3D, this.renderer.domElement);
+        // this.gyroController = new THREE.DeviceOrientationControls(this.camera.object3D);
 
         /* Add some light to see the scene */
         // this.scene.add(new THREE.AmbientLight(0xFFFFFF));
@@ -99,7 +101,11 @@ var App = (function() {
         //     }
 
 
-        //     this.orbit.update();
+        //     if (this.enableVR) {
+        //         this.gyroController.update();
+        //     } else {
+        //         this.orbit.update();
+        //     }
 
         //     // Ask for another frame
         //     requestAnimationFrame(render.bind(this));
