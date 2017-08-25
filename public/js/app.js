@@ -106,9 +106,9 @@ var App = (function() {
         //             this.objects[i].update(this.time);
         //         }
         //         this.time++;
+        //         this.camera.update(this.time);
         //     }
 
-        //     this.camera.update();
 
         //     this.orbit.update();
 
