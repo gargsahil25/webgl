@@ -1,17 +1,15 @@
 var app = null;
 var objectName = null;
 var container = null;
-// var container2 = null;
 
 function onLoad() {
     objectName = document.getElementById("name");
     container = document.getElementById("container");
-    // container2 = document.getElementById("container2");
 
     // Create new app
     app = new App({
         // container: container,
-        // container2: container2
+        // enableVR: true
     });
 
     /* Init objects in app */
